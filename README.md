@@ -21,7 +21,11 @@ A Django project for managing a todo list and tags.
 
 ### Run the development server:
 
-   `uv run python manage.py runserver`
+`uv run python manage.py runserver`
 
 ### Open http://127.0.0.1:8000/ in your browser.
+
+### Run the tests
+
+`uv run python manage.py test tasks`
 
