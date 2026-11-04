@@ -1,14 +1,17 @@
 [project]
 name = "todo-list-mate"
 version = "0.1.0"
-description = "Add your description here"
+description = "A Django project for managing a todo list and tags."
 authors = [
     { name = "Nastya Kalinina" }
 ]
 requires-python = ">=3.13"
 dependencies = [
     "black>=26.10.1",
+    "crispy-bootstrap5>=2026.9",
     "django>=6.1.2",
+    "django-debug-toolbar>=8.0.0",
+    "dotenv>=0.9.9",
 ]
 
 [project.scripts]
