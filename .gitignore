@@ -20,8 +20,13 @@ media
 *.py[cod]
 *$py.class
 
+.DS_Store
+
 # C extensions
 *.so
+
+#Add src
+src
 
 # Distribution / packaging
 .Python
