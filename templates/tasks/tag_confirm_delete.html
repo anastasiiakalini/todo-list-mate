@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Delete this tag?</h1>
+
+  <div class="display-5 fw-bolder text-black mb-5 my-2 position-relative">
+    <form action="" method="post">
+      {% csrf_token %}
+
+      <input type="submit"
+             value="Yes, delete"
+             class="btn btn-danger">
+
+      <a href="{% url 'tasks:tag-list' %}"
+         class="btn btn-secondary">
+        Cancel
+      </a>
+
+    </form>
+  </div>
+{% endblock %}
