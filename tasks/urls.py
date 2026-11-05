@@ -3,12 +3,12 @@ from tasks.views import (
     TaskListView,
     TaskCreateView,
     TaskUpdateView,
+    TaskToggleView,
     TaskDeleteView,
     TagListView,
     TagCreateView,
     TagUpdateView,
     TagDeleteView,
-    toggle_the_task,
 )
 
 app_name = "tasks"
@@ -31,7 +31,7 @@ urlpatterns = [
     ),
     path(
         "tasks/<int:pk>/toggle/",
-        toggle_the_task,
+        TaskToggleView.as_view(),
         name="task-toggle",
     ),
     path(

@@ -1,7 +1,6 @@
 from django.shortcuts import get_object_or_404, redirect
 from django.views import generic
 from django.urls import reverse_lazy
-from django.views.decorators.http import require_POST
 from tasks.models import Task, Tag
 from tasks.forms import (
     TaskCreationForm,
@@ -11,12 +10,13 @@ from tasks.forms import (
 )
 
 
-@require_POST
-def toggle_the_task(request, pk):
-    task = get_object_or_404(Task, pk=pk)
-    task.is_done = not task.is_done
-    task.save(update_fields=["is_done"])
-    return redirect("tasks:task-list")
+class TaskToggleView(generic.View):
+    def post(self, request, pk):
+        task = get_object_or_404(Task, pk=pk)
+        task.is_done = not task.is_done
+        task.save(update_fields=["is_done"])
+
+        return redirect("tasks:task-list")
 
 
 class TaskListView(generic.ListView):
